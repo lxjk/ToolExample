@@ -11,7 +11,7 @@ https://lxjk.github.io/2019/10/01/How-to-Make-Tools-in-U-E.html
     - UE 4.23 compatible
 - 4.24
     - UE 4.24 Compatible
-    - implements [IIWYU](https://docs.unrealengine.com/en-US/ProductionPipelines/BuildTools/UnrealBuildTool/IWYU/index.html) standard
+    - implements [IWYU](https://docs.unrealengine.com/en-US/ProductionPipelines/BuildTools/UnrealBuildTool/IWYU/index.html) standard
     - updates build.cs to V2 target
 - 4.25
     - UE 4.25 Compatible
