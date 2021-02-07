@@ -8,10 +8,7 @@ public class ToolExampleEditor : ModuleRules
 	public ToolExampleEditor(ReadOnlyTargetRules Target) : base(Target)
     {
 
-        bLegacyPublicIncludePaths = false;
-        //ShadowVariableWarningLevel = WarningLevel.Error;
-        PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
-        PrivatePCHHeaderFile = "ToolExampleEditor.h";
+        //PrivatePCHHeaderFile = "ToolExampleEditor.h";  // TODO - see if adding this back in helps much with normal dev cycles
 
         PublicIncludePaths.AddRange(
             new string[] {
