@@ -20,7 +20,8 @@ UObject* UExampleDataFactory::FactoryCreateNew(UClass* Class, UObject* InParent,
 
 UObject* UExampleDataFactory::FactoryCreateText(UClass* InClass, UObject* InParent, FName InName, EObjectFlags Flags, UObject* Context, const TCHAR* Type, const TCHAR*& Buffer, const TCHAR* BufferEnd, FFeedbackContext* Warn)
 {
-	FEditorDelegates::OnAssetPreImport.Broadcast(this, InClass, InParent, InName, Type);
+	//FEditorDelegates::OnAssetPreImport.Broadcast(this, InClass, InParent, InName, Type);
+	GEditor->GetEditorSubsystem<UImportSubsystem>()->BroadcastAssetPreImport(this, InClass, InParent, InName, Type);
 
 	// if class type or extension doesn't match, return
 	if (InClass != UExampleData::StaticClass() ||
@@ -33,7 +34,8 @@ UObject* UExampleDataFactory::FactoryCreateText(UClass* InClass, UObject* InPare
 	// save the source file path
 	Data->SourceFilePath = UAssetImportData::SanitizeImportFilename(CurrentFilename, Data->GetOutermost());
 
-	FEditorDelegates::OnAssetPostImport.Broadcast(this, Data);
+	//FEditorDelegates::OnAssetPostImport.Broadcast(this, Data);
+	GEditor->GetEditorSubsystem<UImportSubsystem>()->BroadcastAssetPostImport(this, Data);
 
 	return Data;
 }
