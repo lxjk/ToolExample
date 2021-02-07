@@ -1,5 +1,7 @@
 ToolExample.sln
+ToolExample.code-workspace
 .vs/
+.vscode/
 Binaries/
 Intermediate/
 Saved/
