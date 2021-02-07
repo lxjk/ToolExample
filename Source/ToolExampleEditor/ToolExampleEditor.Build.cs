@@ -7,6 +7,7 @@ public class ToolExampleEditor : ModuleRules
 {
 	public ToolExampleEditor(ReadOnlyTargetRules Target) : base(Target)
     {
+            
         PublicIncludePaths.AddRange(
             new string[] {
 					// ... add public include paths required here ...
@@ -19,6 +20,9 @@ public class ToolExampleEditor : ModuleRules
             }
             );
 
+        PCHUsage = ModuleRules.PCHUsageMode.NoSharedPCHs;
+        PrivatePCHHeaderFile = "ToolExampleEditor.h";
+        
         PublicDependencyModuleNames.AddRange(
             new string[] {
                 "Core",
