@@ -153,7 +153,7 @@ FText MenuTool::GetTagToAddText() const
 void MenuTool::OnTagToAddTextCommited(const FText& InText, ETextCommit::Type CommitInfo)
 {
 	FString str = InText.ToString();
-	TagToAdd = FName(*str.Trim());
+	TagToAdd = FName(*str.TrimStart()); 
 }
 
 #undef LOCTEXT_NAMESPACE
