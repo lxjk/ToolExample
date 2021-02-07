@@ -2,8 +2,8 @@
 
 #include "ToolExampleEditor/ToolExampleEditor.h"
 #include "ToolExampleEditor/IExampleModuleInterface.h"
-#include "TabManager.h"
-#include "SDockTab.h"
+#include "Framework/Docking/TabManager.h"
+#include "Widgets/Docking/SDockTab.h"
 
 class FExampleTabToolBase : public IExampleModuleListenerInterface, public TSharedFromThis< FExampleTabToolBase >
 {

@@ -5,8 +5,8 @@
 #include "TabTool/TabTool.h"
 #include "EditorMode/ExampleEdModeTool.h"
 
-#include "DetailsCustomization/ExampleActor.h"
-#include "DetailsCustomization/ExampleActorDetails.h"
+#include "ToolExample/DetailsCustomization/ExampleActor.h"
+#include "ToolExampleEditor/DetailsCustomization/ExampleActorDetails.h"
 
 #include "CustomDataType/ExampleDataTypeActions.h"
 

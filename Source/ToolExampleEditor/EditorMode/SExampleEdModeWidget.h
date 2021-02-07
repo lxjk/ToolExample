@@ -1,6 +1,6 @@
 #pragma once
 
-#include "SlateApplication.h"
+#include "Framework/APplication/SlateApplication.h"
 
 class SExampleEdModeWidget : public SCompoundWidget
 {

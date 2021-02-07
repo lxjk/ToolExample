@@ -8,8 +8,7 @@ public class ToolExampleEditor : ModuleRules
 	public ToolExampleEditor(ReadOnlyTargetRules Target) : base(Target)
     {
 
-        //PCHUsage = ModuleRules.PCHUsageMode.NoSharedPCHs;
-        //bLegacyPublicIncludePaths = false;
+        bLegacyPublicIncludePaths = false;
         //ShadowVariableWarningLevel = WarningLevel.Error;
         PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
         PrivatePCHHeaderFile = "ToolExampleEditor.h";

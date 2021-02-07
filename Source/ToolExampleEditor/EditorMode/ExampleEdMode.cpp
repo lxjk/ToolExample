@@ -3,7 +3,7 @@
 #include "Editor/UnrealEd/Public/Toolkits/ToolkitManager.h"
 #include "ScopedTransaction.h"
 #include "ExampleEdModeToolkit.h"
-#include "EditorMode/ExampleTargetPoint.h"
+#include "ToolExample/EditorMode/ExampleTargetPoint.h"
 
 class ExampleEditorCommands : public TCommands<ExampleEditorCommands>
 {
