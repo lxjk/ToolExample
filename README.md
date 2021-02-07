@@ -13,3 +13,7 @@ https://lxjk.github.io/2019/10/01/How-to-Make-Tools-in-U-E.html
     - UE 4.24 Compatible
     - implements [IIWYU](https://docs.unrealengine.com/en-US/ProductionPipelines/BuildTools/UnrealBuildTool/IWYU/index.html) standard
     - updates build.cs to V2 target
+- 4.25
+    - UE 4.25 Compatible
+    - builds and runs, but the Example Editor Mode isn't working.  It shows up in the Modes list, but the UI never gets built when selected.  I didn't see any errors or warnings anywhere
+    - as it stands, this source is identical to th 4.24 branch, but that will probably change to get that editor mode working again.
