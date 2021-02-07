@@ -1,6 +1,7 @@
 #pragma once
 
 #include "EditorModes.h"
+#include "EdMode.h"
 
 struct HExamplePointProxy : public HHitProxy
 {
