@@ -33,7 +33,8 @@ public:
 	{
 		FGlobalTabmanager::Get()->PopulateTabSpawnerMenu(menuBuilder, TabName);
 	};
-
+	
+	virtual ~FExampleTabToolBase() { };  // this gets rid of a virtual destructor warning, but I'm no sure this is the correct way to handle it - you can also use a pragma to supress the warning
 protected:
 	FName TabName;
 	FText TabDisplayName;
