@@ -1,3 +1,4 @@
+.ignore
 ToolExample.sln
 ToolExample.code-workspace
 .vs/
@@ -5,3 +6,4 @@ ToolExample.code-workspace
 Binaries/
 Intermediate/
 Saved/
+
