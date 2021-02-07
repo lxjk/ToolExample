@@ -1,4 +1,4 @@
-
+#include "TabTool.h"
 //#include "AssetRegistryModule.h"
 //#include "ScopedTransaction.h"
 //#include "SDockTab.h"
@@ -7,7 +7,6 @@
 //#include "SlateApplication.h"
 #include "ToolExampleEditor/ToolExampleEditor.h"
 #include "TabToolPanel.h"
-#include "TabTool.h"
 
 void TabTool::OnStartupModule()
 {

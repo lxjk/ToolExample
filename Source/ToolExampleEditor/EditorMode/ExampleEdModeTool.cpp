@@ -1,5 +1,5 @@
-#include "ToolExampleEditor/ToolExampleEditor.h"
 #include "ExampleEdModeTool.h"
+#include "ToolExampleEditor/ToolExampleEditor.h"
 #include "ExampleEdMode.h"
 
 #define IMAGE_BRUSH(RelativePath, ...) FSlateImageBrush(StyleSet->RootToContentDir(RelativePath, TEXT(".png")), __VA_ARGS__)

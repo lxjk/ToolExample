@@ -7,7 +7,13 @@ public class ToolExampleEditor : ModuleRules
 {
 	public ToolExampleEditor(ReadOnlyTargetRules Target) : base(Target)
     {
-            
+
+        //PCHUsage = ModuleRules.PCHUsageMode.NoSharedPCHs;
+        //bLegacyPublicIncludePaths = false;
+        //ShadowVariableWarningLevel = WarningLevel.Error;
+        PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
+        PrivatePCHHeaderFile = "ToolExampleEditor.h";
+
         PublicIncludePaths.AddRange(
             new string[] {
 					// ... add public include paths required here ...
@@ -20,10 +26,6 @@ public class ToolExampleEditor : ModuleRules
             }
             );
 
-        //PCHUsage = ModuleRules.PCHUsageMode.NoSharedPCHs;
-        PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
-        PrivatePCHHeaderFile = "ToolExampleEditor.h";
-        
         PublicDependencyModuleNames.AddRange(
             new string[] {
                 "Core",

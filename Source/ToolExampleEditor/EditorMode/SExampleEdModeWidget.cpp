@@ -1,6 +1,6 @@
+#include "SExampleEdModeWidget.h"
 #include "ToolExampleEditor/ToolExampleEditor.h"
 #include "ExampleEdMode.h"
-#include "SExampleEdModeWidget.h"
 
 void SExampleEdModeWidget::Construct(const FArguments& InArgs)
 {

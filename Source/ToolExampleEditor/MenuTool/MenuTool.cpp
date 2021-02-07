@@ -1,5 +1,5 @@
-#include "ToolExampleEditor/ToolExampleEditor.h"
 #include "MenuTool.h"
+#include "ToolExampleEditor/ToolExampleEditor.h"
 
 #include "ScopedTransaction.h"
 

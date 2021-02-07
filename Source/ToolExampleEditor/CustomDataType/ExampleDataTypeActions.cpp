@@ -1,5 +1,5 @@
-#include "ToolExampleEditor/ToolExampleEditor.h"
 #include "ExampleDataTypeActions.h"
+#include "ToolExampleEditor/ToolExampleEditor.h"
 #include "CustomDataType/ExampleData.h"
 
 

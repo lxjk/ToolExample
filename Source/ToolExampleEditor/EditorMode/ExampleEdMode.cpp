@@ -1,8 +1,8 @@
+#include "ExampleEdMode.h"
 #include "ToolExampleEditor/ToolExampleEditor.h"
 #include "Editor/UnrealEd/Public/Toolkits/ToolkitManager.h"
 #include "ScopedTransaction.h"
 #include "ExampleEdModeToolkit.h"
-#include "ExampleEdMode.h"
 #include "EditorMode/ExampleTargetPoint.h"
 
 class ExampleEditorCommands : public TCommands<ExampleEditorCommands>

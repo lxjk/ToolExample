@@ -1,6 +1,5 @@
-
-#include "ToolExampleEditor/ToolExampleEditor.h"
 #include "ExampleActorDetails.h"
+#include "ToolExampleEditor/ToolExampleEditor.h"
 
 #include "DetailsCustomization/ExampleActor.h"
 
