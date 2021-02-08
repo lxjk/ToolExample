@@ -8,7 +8,7 @@ of updating the codebase to 4.26.
 
 ## Branches
 - master
-    - current development branch
+    - current development branch - this will likely have the most recent code
 - 4.23
     - original fork from [lxjk/ToolExample](https://github.com/lxjk/ToolExample).
     - UE 4.23 compatible.
