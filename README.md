@@ -1,7 +1,10 @@
 # ToolExample - ScottKirvan/ToolExample fork
 
 The original project and documentation can be found here:\
-https://lxjk.github.io/2019/10/01/How-to-Make-Tools-in-U-E.html
+https://lxjk.github.io/2019/10/01/How-to-Make-Tools-in-U-E.html \
+The origial project will build for 4.23 but not [4.17](https://github.com/lxjk/ToolExample/issues/2). 
+I couldn't build for 4.25 or 4.26, so I created this fork to go through the process
+of updating the codebase to 4.26.
 
 ## Branches
 - master
