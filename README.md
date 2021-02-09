@@ -1,5 +1,7 @@
 # ToolExample - ScottKirvan/ToolExample fork
 
+This project contains example code for [Unreal Engine](https://github.com/epicgames) engine developers.
+
 The original project and documentation can be found here:\
 https://lxjk.github.io/2019/10/01/How-to-Make-Tools-in-U-E.html \
 The origial project will build for 4.23 but not [4.17](https://github.com/lxjk/ToolExample/issues/2). 
