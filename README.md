@@ -1,6 +1,6 @@
 # ToolExample - ScottKirvan/ToolExample fork
 
-This project contains example code for [Unreal Engine](https://github.com/epicgames) engine developers.
+This project contains UX/UI example code for [Unreal Engine](https://github.com/epicgames) engine developers.
 
 The original project and documentation can be found here:\
 https://lxjk.github.io/2019/10/01/How-to-Make-Tools-in-U-E.html \
