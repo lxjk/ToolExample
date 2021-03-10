@@ -3,6 +3,7 @@ ToolExample.sln
 ToolExample.code-workspace
 .vs/
 .vscode/
+.idea/
 Binaries/
 Intermediate/
 Saved/
