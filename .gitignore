@@ -6,5 +6,6 @@ ToolExample.code-workspace
 Binaries/
 Intermediate/
 Saved/
+.idea/
 
 Config/DefaultEditorUserSettings.ini
