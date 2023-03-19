@@ -49,6 +49,7 @@ public class ToolExampleEditor : ModuleRules
                 "Engine",
                 "AppFramework",
                 "SlateCore",
+                "EditorFramework",
                 "AnimGraph",
                 "UnrealEd",
                 "KismetWidgets",
