@@ -9,8 +9,9 @@ public class ToolExampleEditorTarget : TargetRules
 	{
 		Type = TargetType.Editor;
         DefaultBuildSettings = BuildSettingsVersion.V2;
+        IncludeOrderVersion = EngineIncludeOrderVersion.Latest;
 
-		ExtraModuleNames.AddRange( new string[] { "ToolExample" } );
+        ExtraModuleNames.AddRange( new string[] { "ToolExample" } );
         ExtraModuleNames.AddRange( new string[] { "ToolExampleEditor" });
     }
 }
