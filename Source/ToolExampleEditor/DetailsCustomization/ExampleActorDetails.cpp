@@ -35,7 +35,7 @@ void FExampleActorDetails::CustomizeDetails(IDetailLayoutBuilder& DetailLayout)
 					.VAlign(VAlign_Center)
 					[
 						SNew(SCheckBox)
-						.Style(FEditorStyle::Get(), "RadioButton")
+						.Style(FAppStyle::Get(), "RadioButton")
 						.IsChecked(this, &FExampleActorDetails::IsModeRadioChecked, actor, 1)
 						.OnCheckStateChanged(this, &FExampleActorDetails::OnModeRadioChanged, actor, 1)
 						[
@@ -48,7 +48,7 @@ void FExampleActorDetails::CustomizeDetails(IDetailLayoutBuilder& DetailLayout)
 					.VAlign(VAlign_Center)
 					[
 						SNew(SCheckBox)
-						.Style(FEditorStyle::Get(), "RadioButton")
+						.Style(FAppStyle::Get(), "RadioButton")
 						.IsChecked(this, &FExampleActorDetails::IsModeRadioChecked, actor, 2)
 						.OnCheckStateChanged(this, &FExampleActorDetails::OnModeRadioChanged, actor, 2)
 						[
