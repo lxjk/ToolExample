@@ -1,9 +1,10 @@
-# [ToolExample - ScottKirvan/ToolExample fork](https://github.com/ScottKirvan/ToolExample)
-This project contains UX/UI C++ examples for adding tools and UI elements to the [Unreal Engine](https://github.com/epicgames) editor - which means, these are editor tools for the artist, and not an example of how to write the runtime game code that a player would interact with.  
+# [ScottKirvan/ToolExample](https://github.com/ScottKirvan/ToolExample)
+ToolExample contains UX/UI C/C++ examples for adding tools and UI elements to the [Unreal Engine](https://www.unrealengine.com) editor - which means, these are editor tools for the artist, and not an example of how to write the runtime game code that a player would interact with.  
 
-If you're looking for an example to show how to add an item to the existing menu, or a new edit mode, or how to create a dockable window, this is a really thorough, [step-by-step example](https://lxjk.github.io/2019/10/01/How-to-Make-Tools-in-U-E.html) that starts from an empty code project, immediately jumps into the base modules needed, and then clearly and easily walks through the steps to code up various UI elements, hooking them to functionality as you go.
+If you're looking for an example to show how to add an item to the existing menu, or a new edit mode, or how to create a dockable window, this is a really thorough, [step-by-step example](https://lxjk.github.io/2019/10/01/How-to-Make-Tools-in-U-E.html) that starts from an empty code project, immediately jumps into the base modules needed, and then clearly walks through the steps to code up various UI elements, hooking them to functionality as you go.
 
-The example covers the following:
+# Features
+These examples show how to implement the following:
 - adding modules
 - adding menus to the editor interface with:
   - sections
@@ -30,7 +31,7 @@ This tutorial has become the most valuable one I've run across in my Unreal C++ 
 - 5.1
 	- UE 5.1 Compatible
 	- There was some header changes, a new module dependency, and class FEditorStyle was deprecated and replaced with FAppStyle.
-	- I tested this very briefly, but it all seems to be working in UE5!
+	- I tested this very briefly, but it all looks good!
 - 4.26
   - UE 4.26 Compatible.
   - Example Editor Mode is working in this version, so I'm not going to bother trying to figure out what broke in 4.25.  If anyone takes this on as a project, please toss up a Pull Request.
@@ -47,3 +48,36 @@ This tutorial has become the most valuable one I've run across in my Unreal C++ 
 - 4.23
     - original fork from [lxjk/ToolExample](https://github.com/lxjk/ToolExample).
     - UE 4.23 compatible.
+
+## Contributing
+Do you know how to create a UI tool that would be good to include in this example?  Interested in contributing with writing or anything else?  Did you find a bug?! Please help out!   Check the issues link to see the kinds of things that might be fun to tackle.
+
+The best way to contribute would be with Pull Requests (PR):  Fork this repository, make your changes, and submit a Pull Request that can be reviewed and rolled back in.
+
+If you don't want to do the Write/PR process yourself, but would still like to contribute, just use the Issues link above to report bugs or request something new you'd like to see.  
+
+## System Requirements
+- Computer capable of Unreal Engine development
+	- Epic Recommends: xxx
+- Unreal Engine 5.1
+	- This repo supports older versions, just clone the branch you need.
+- Microsoft Visual Studio 2022
+	- I believe the 2019 version works with UE5 also.
+
+## Getting Started With Local Development
+Clone or download this repo.  Double clicking the `uproject` file should launch Unreal, which will recognize it as a code project and build everything automatically.  
+
+I highly recommend following the Tutorial and using this code as reference.  If you hit an error, look at this code to see what may have changed.
+
+
+## Support
+- 
+
+## Submit a Feature Request
+Use the [Issues](https://github.com/ScottKirvan/ToolExample/issues) link, above.
+
+## Credits
+Eric Zhang (2019)  
+Scott Kirvan (2021-present)
+
+*ToolExample is licensed under the [MIT License](LICENSE.md).*
