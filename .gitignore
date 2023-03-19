@@ -10,3 +10,5 @@ Saved/
 .idea/
 
 Config/DefaultEditorUserSettings.ini
+.vsconfig
+Config/DefaultInput.ini
