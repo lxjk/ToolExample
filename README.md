@@ -58,7 +58,7 @@ If you don't want to do the Write/PR process yourself, but would still like to c
 
 ## System Requirements
 - Computer capable of Unreal Engine development
-	- Epic Recommends [this.]
+	- Epic Recommends [this.](https://docs.unrealengine.com/5.1/en-US/hardware-and-software-specifications-for-unreal-engine/)
 	- The typical system used by developers at Epic Games looks like this:
 		-   Windows 10 64-bit (Version 20H2)
 		-   64 GB RAM
@@ -84,7 +84,7 @@ A couple of other good resources for getting started:
 
 ## Support/Contact
 - Feel free to reach out to me on the [Unreal Slackers](https://discord.gg/unreal-slackers) discord.  I'm @Fragmanget_.  There is also a ton of other Unreal programmers up there, so if I'm not around to help, someone else be able to get you going.
-- You can also reach me on my personal [Discord Server](https://discord.gg/TSKHvVFYxB) (@cptvideo), via [LinkedIn](https://www.linkedin.com/in/scottkirvan/), or [email](mailto:ToolExample@skvfx.com).
+- You can also reach me on my personal [Discord Server](https://discord.gg/TSKHvVFYxB) (@cptvideo), via [LinkedIn](https://www.linkedin.com/in/scottkirvan/), or <a href="mailto:ToolExample@skvfx.com">email</a>.
 
 ## Submit a Feature Request
 Use the [Issues](https://github.com/ScottKirvan/ToolExample/issues) link, above.  Thanks!
