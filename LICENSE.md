@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2019 Eric Zhang
+Copyright (c) 2019 Eric Zhang  
 Copyright (c) 2021-2023 Scott Kirvan
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
