@@ -1,10 +1,12 @@
 # [ScottKirvan/ToolExample](https://github.com/ScottKirvan/ToolExample)
 ToolExample contains UX/UI C/C++ examples for adding tools and UI elements to the [Unreal Engine](https://www.unrealengine.com) editor - which means, these are editor tools for the artist, and not an example of how to write the runtime game code that a player would interact with.  
 
+![Splash Image](docs/images/splash.png)
+
 If you're looking for an example to show how to add an item to the existing menu, or a new edit mode, or how to create a dockable window, this is a really thorough, [step-by-step example](https://lxjk.github.io/2019/10/01/How-to-Make-Tools-in-U-E.html) that starts from an empty code project, immediately jumps into the base modules needed, and then clearly walks through the steps to code up various UI elements, hooking them to functionality as you go.
 
 # Features
-These examples show how to implement the following:
+These examples demonstrate how to implement the following:
 - adding modules
 - adding menus to the editor interface with:
   - sections
@@ -52,32 +54,49 @@ This tutorial has become the most valuable one I've run across in my Unreal C++ 
 ## Contributing
 Do you know how to create a UI tool that would be good to include in this example?  Interested in contributing with writing or anything else?  Did you find a bug?! Please help out!   Check the issues link to see the kinds of things that might be fun to tackle.
 
-The best way to contribute would be with Pull Requests (PR):  Fork this repository, make your changes, and submit a Pull Request that can be reviewed and rolled back in.
+The best way to contribute would be with [Pull Requests (PR)](https://github.com/ScottKirvan/ToolExample/pulls):  Fork this repository, make your changes, and submit a New Pull Request that can be reviewed and rolled back in.
 
-If you don't want to do the Write/PR process yourself, but would still like to contribute, just use the Issues link above to report bugs or request something new you'd like to see.  
+If you don't want to do the Write/PR process yourself, but would still like to contribute, just use the [Issues](https://github.com/ScottKirvan/ToolExample/issues) link above to report bugs or request something new you'd like to see.  
 
 ## System Requirements
 - Computer capable of Unreal Engine development
-	- Epic Recommends: xxx
+	- Epic Recommends [this.](https://docs.unrealengine.com/5.1/en-US/hardware-and-software-specifications-for-unreal-engine/)
+	- The typical system used by developers at Epic Games looks like this:
+		-   Windows 10 64-bit (Version 20H2)
+		-   64 GB RAM
+		-   256 GB SSD (OS Drive)
+		-   2 TB SSD (Data Drive)
+		-   NVIDIA GeForce RTX 2080 SUPER
+		-   Xoreax Incredibuild (Dev Tools Package)
+		-   Six-Core Xeon E5-2643 @ 3.4GHz
+	- I get by with a 16 core AMD Ryzen 9, Windows 11, MSDev2022, and 40 GB RAM on my gaming laptop.
 - Unreal Engine 5.1
-	- This repo supports older versions, just clone the branch you need.
+	- This repo also supports older versions, just download/clone the [branch](https://github.com/ScottKirvan/ToolExample/branches) you need.
 - Microsoft Visual Studio 2022
-	- I believe the 2019 version works with UE5 also.
+	- Epic still recommends the 2019 version, but I'm using 2022 - get the free-to-use [Community version here](https://visualstudio.microsoft.com/vs/community/).
+	- This repo supports older versions, just clone the branch you need.
+- Microsoft Visual Studio 2019
+	- the 2022 version works as well, but you have to explicitly tell unreal engine to use 2022 (`Edit -> Editor Preferences... -> Source Code -> Source Code Editor`).
 
 ## Getting Started With Local Development
-Clone or download this repo.  Double clicking the `uproject` file should launch Unreal, which will recognize it as a code project and build everything automatically.  
+Clone or download this repo.  If you have Unreal and Visual Studio properly installed, double clicking the `uproject` file should launch Unreal, which will recognize it as a code project and build everything automatically.  
 
 I highly recommend following the Tutorial and using this code as reference.  If you hit an error, look at this code to see what may have changed.
 
+A couple of other good resources for getting started:
+- [Setting Up Visual Studio for EU5.1](https://docs.unrealengine.com/5.1/en-US/setting-up-visual-studio-development-environment-for-cplusplus-projects-in-unreal-engine/)
+- [UE5.1 Programming Quickstart](https://docs.unrealengine.com/5.1/en-US/unreal-engine-cpp-quick-start/)
 
-## Support
-- 
+## Support/Contact
+- Feel free to reach out to me on the [Unreal Slackers](https://discord.gg/unreal-slackers) discord.  I'm @Fragmanget_.  There is also a ton of other Unreal programmers up there, so if I'm not around to help, someone else be able to get you going.
+- You can also reach me on my personal [Discord Server](https://discord.gg/TSKHvVFYxB) (@cptvideo), via [LinkedIn](https://www.linkedin.com/in/scottkirvan/), or <a href="mailto:ToolExample@skvfx.com">email</a>.
 
 ## Submit a Feature Request
-Use the [Issues](https://github.com/ScottKirvan/ToolExample/issues) link, above.
+Use the [Issues](https://github.com/ScottKirvan/ToolExample/issues) link, above.  Thanks!
 
 ## Credits
 Eric Zhang (2019)  
-Scott Kirvan (2021-present)
+Scott Kirvan (2021-present)  
+You!
 
 *ToolExample is licensed under the [MIT License](LICENSE.md).*
