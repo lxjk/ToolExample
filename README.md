@@ -1,6 +1,8 @@
 # [ScottKirvan/ToolExample](https://github.com/ScottKirvan/ToolExample)
 ToolExample contains UX/UI C/C++ examples for adding tools and UI elements to the [Unreal Engine](https://www.unrealengine.com) editor - which means, these are editor tools for the artist, and not an example of how to write the runtime game code that a player would interact with.  
 
+![Splash Image](images/splash.png)
+
 If you're looking for an example to show how to add an item to the existing menu, or a new edit mode, or how to create a dockable window, this is a really thorough, [step-by-step example](https://lxjk.github.io/2019/10/01/How-to-Make-Tools-in-U-E.html) that starts from an empty code project, immediately jumps into the base modules needed, and then clearly walks through the steps to code up various UI elements, hooking them to functionality as you go.
 
 # Features
@@ -72,6 +74,9 @@ If you don't want to do the Write/PR process yourself, but would still like to c
 	- This repo also supports older versions, just download/clone the [branch](https://github.com/ScottKirvan/ToolExample/branches) you need.
 - Microsoft Visual Studio 2022
 	- Epic still recommends the 2019 version, but I'm using 2022 - get the free-to-use [Community version here](https://visualstudio.microsoft.com/vs/community/).
+	- This repo supports older versions, just clone the branch you need.
+- Microsoft Visual Studio 2019
+	- the 2022 version works as well, but you have to explicitly tell unreal engine to use 2022 (`Edit -> Editor Preferences... -> Source Code -> Source Code Editor`).
 
 ## Getting Started With Local Development
 Clone or download this repo.  If you have Unreal and Visual Studio properly installed, double clicking the `uproject` file should launch Unreal, which will recognize it as a code project and build everything automatically.  
