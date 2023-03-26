@@ -29,7 +29,7 @@ This tutorial has become the most valuable one I've run across in my Unreal C++ 
 
 ## Branches
 - master
-    - current development branch - this will likely have the most recent code
+    - current development branch - this will likely have the most recent code - note: this branch does work with UE 5.2 Preview 1
 - 5.1
 	- UE 5.1 Compatible
 	- There was some header changes, a new module dependency, and class FEditorStyle was deprecated and replaced with FAppStyle.
