@@ -1,7 +1,7 @@
 MIT License
 
 Copyright (c) 2019 Eric Zhang  
-Copyright (c) 2021-2023 Scott Kirvan
+This code includes modifications by Scott Kirvan.  Modifications (c) Scott Kirvan  
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
