@@ -1,6 +1,7 @@
 #include "ExampleDataTypeActions.h"
 #include "ToolExampleEditor/ToolExampleEditor.h"
 #include "ToolExample/CustomDataType/ExampleData.h"
+#include "XMPAssetTypeActions_Base.h"
 
 
 FExampleDataTypeActions::FExampleDataTypeActions(EAssetTypeCategories::Type InAssetCategory)
@@ -41,16 +42,4 @@ void FExampleDataTypeActions::GetActions(const TArray<UObject*>& InObjects, FMen
 			FCanExecuteAction()
 		)
 	);
-}
-
-void FExampleDataTypeActions::ExecuteReimport(TArray<TWeakObjectPtr<UExampleData>> Objects)
-{
-	for (auto ObjIt = Objects.CreateConstIterator(); ObjIt; ++ObjIt)
-	{
-		auto Object = (*ObjIt).Get();
-		if (Object)
-		{
-			FReimportManager::Instance()->Reimport(Object, /*bAskForNewFileIfMissing=*/true);
-		}
-	}
 }

@@ -1,10 +1,10 @@
 #pragma once
 
-#include "AssetTypeActions_Base.h"
+#include "XMPAssetTypeActions_Base.h"
 
 class UExampleData;
 
-class FExampleDataTypeActions : public FAssetTypeActions_Base
+class FExampleDataTypeActions : public FXMPAssetTypeActions_Base
 {
 public:
 	FExampleDataTypeActions(EAssetTypeCategories::Type InAssetCategory);
@@ -17,8 +17,6 @@ public:
 	virtual bool HasActions(const TArray<UObject*>& InObjects) const override { return true; }
 	virtual void GetActions(const TArray<UObject*>& InObjects, FMenuBuilder& MenuBuilder) override;
 	// End of IAssetTypeActions interface
-
-	void ExecuteReimport(TArray<TWeakObjectPtr<UExampleData>> Objects);
 
 private:
 	EAssetTypeCategories::Type MyAssetCategory;
