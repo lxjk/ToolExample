@@ -97,7 +97,7 @@ Use the [Issues](https://github.com/ScottKirvan/ToolExample/issues) link, above.
 ## Credits
 [Eric Zhang](https://github.com/lxjk) (2019)  
 [Scott Kirvan](https://github.com/ScottKirvan) (2021-present)  
-[Razdvizh](https://github.com/Razdvizh) (2023)
+[Razdvizh](https://github.com/Razdvizh) (2023)  
 You!
 
 *ToolExample is licensed under the [MIT License](LICENSE.md).*
