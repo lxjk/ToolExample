@@ -7,6 +7,9 @@ public class ToolExampleEditor : ModuleRules
 {
 	public ToolExampleEditor(ReadOnlyTargetRules Target) : base(Target)
     {
+
+        //PrivatePCHHeaderFile = "ToolExampleEditor.h";  // TODO - see if adding this back in helps much with normal dev cycles
+
         PublicIncludePaths.AddRange(
             new string[] {
 					// ... add public include paths required here ...
@@ -46,6 +49,7 @@ public class ToolExampleEditor : ModuleRules
                 "Engine",
                 "AppFramework",
                 "SlateCore",
+                "EditorFramework",
                 "AnimGraph",
                 "UnrealEd",
                 "KismetWidgets",

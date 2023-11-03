@@ -1,5 +1,5 @@
-#include "ToolExampleEditor/ToolExampleEditor.h"
 #include "ExampleEdModeTool.h"
+#include "ToolExampleEditor/ToolExampleEditor.h"
 #include "ExampleEdMode.h"
 
 #define IMAGE_BRUSH(RelativePath, ...) FSlateImageBrush(StyleSet->RootToContentDir(RelativePath, TEXT(".png")), __VA_ARGS__)
@@ -31,8 +31,8 @@ void ExampleEdModeTool::RegisterStyleSet()
 	}
 
 	StyleSet = MakeShareable(new FSlateStyleSet("ExampleEdModeToolStyle"));
-	StyleSet->SetContentRoot(FPaths::GameDir() / TEXT("Content/EditorResources"));
-	StyleSet->SetCoreContentRoot(FPaths::GameDir() / TEXT("Content/EditorResources"));
+	StyleSet->SetContentRoot(FPaths::ProjectDir() / TEXT("Content/EditorResources"));
+	StyleSet->SetCoreContentRoot(FPaths::ProjectDir() / TEXT("Content/EditorResources"));
 
 	// Spline editor
 	{

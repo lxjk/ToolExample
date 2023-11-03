@@ -1,7 +1,7 @@
-#include "ToolExampleEditor/ToolExampleEditor.h"
 #include "ReimportExampleDataFactory.h"
+#include "ToolExampleEditor/ToolExampleEditor.h"
 #include "ExampleDataFactory.h"
-#include "CustomDataType/ExampleData.h"
+#include "ToolExample/CustomDataType/ExampleData.h"
 
 bool UReimportExampleDataFactory::CanReimport(UObject* Obj, TArray<FString>& OutFilenames)
 {

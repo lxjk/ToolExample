@@ -1,5 +1,5 @@
-#include "ToolExampleEditor/ToolExampleEditor.h"
 #include "MenuTool.h"
+#include "ToolExampleEditor/ToolExampleEditor.h"
 
 #include "ScopedTransaction.h"
 
@@ -8,14 +8,13 @@
 class MenuToolCommands : public TCommands<MenuToolCommands>
 {
 public:
-
 	MenuToolCommands()
 		: TCommands<MenuToolCommands>(
-		TEXT("MenuTool"), // Context name for fast lookup
-		FText::FromString("Example Menu tool"), // Context name for displaying
-		NAME_None,	 // No parent context
-		FEditorStyle::GetStyleSetName() // Icon Style Set
-		)
+			  TEXT("MenuTool"),						  // Context name for fast lookup
+			  FText::FromString("Example Menu tool"), // Context name for displaying
+			  NAME_None,							  // No parent context
+			  FAppStyle::GetAppStyleSetName()		  // Icon Style Set
+		  )
 	{
 	}
 
@@ -24,7 +23,6 @@ public:
 		UI_COMMAND(MenuCommand1, "Menu Command 1", "Test Menu Command 1.", EUserInterfaceActionType::Button, FInputGesture());
 		UI_COMMAND(MenuCommand2, "Menu Command 2", "Test Menu Command 2.", EUserInterfaceActionType::Button, FInputGesture());
 		UI_COMMAND(MenuCommand3, "Menu Command 3", "Test Menu Command 3.", EUserInterfaceActionType::Button, FInputGesture());
-
 	}
 
 public:
@@ -35,7 +33,7 @@ public:
 
 void MenuTool::MapCommands()
 {
-	const auto& Commands = MenuToolCommands::Get();
+	const auto &Commands = MenuToolCommands::Get();
 
 	CommandList->MapAction(
 		Commands.MenuCommand1,
@@ -53,7 +51,6 @@ void MenuTool::MapCommands()
 		FCanExecuteAction());
 }
 
-
 void MenuTool::OnStartupModule()
 {
 	CommandList = MakeShareable(new FUICommandList);
@@ -70,37 +67,17 @@ void MenuTool::OnShutdownModule()
 	MenuToolCommands::Unregister();
 }
 
-
 void MenuTool::MakeMenuEntry(FMenuBuilder &menuBuilder)
 {
 	menuBuilder.AddMenuEntry(MenuToolCommands::Get().MenuCommand1);
 	menuBuilder.AddSubMenu(
 		FText::FromString("Sub Menu"),
 		FText::FromString("This is example sub menu"),
-		FNewMenuDelegate::CreateSP(this, &MenuTool::MakeSubMenu)
-	);
+		FNewMenuDelegate::CreateSP(this, &MenuTool::MakeSubMenu));
 
 	// add tag
 	TSharedRef<SWidget> AddTagWidget =
-		SNew(SHorizontalBox)
-		+ SHorizontalBox::Slot()
-		.AutoWidth()
-		.VAlign(VAlign_Center)
-		[
-			SNew(SEditableTextBox)
-			.MinDesiredWidth(50)
-			.Text(this, &MenuTool::GetTagToAddText)
-			.OnTextCommitted(this, &MenuTool::OnTagToAddTextCommited)
-		]
-		+ SHorizontalBox::Slot()
-		.AutoWidth()
-		.Padding(5, 0, 0, 0)
-		.VAlign(VAlign_Center)
-		[
-			SNew(SButton)
-			.Text(FText::FromString("Add Tag"))
-			.OnClicked(this, &MenuTool::AddTag)
-		];
+		SNew(SHorizontalBox) + SHorizontalBox::Slot().AutoWidth().VAlign(VAlign_Center)[SNew(SEditableTextBox).MinDesiredWidth(50).Text(this, &MenuTool::GetTagToAddText).OnTextCommitted(this, &MenuTool::OnTagToAddTextCommited)] + SHorizontalBox::Slot().AutoWidth().Padding(5, 0, 0, 0).VAlign(VAlign_Center)[SNew(SButton).Text(FText::FromString("Add Tag")).OnClicked(this, &MenuTool::AddTag)];
 
 	menuBuilder.AddWidget(AddTagWidget, FText::FromString(""));
 }
@@ -108,7 +85,7 @@ void MenuTool::MakeMenuEntry(FMenuBuilder &menuBuilder)
 void MenuTool::MakeSubMenu(FMenuBuilder &menuBuilder)
 {
 	menuBuilder.AddMenuEntry(MenuToolCommands::Get().MenuCommand2);
-	menuBuilder.AddMenuEntry(MenuToolCommands::Get().MenuCommand3);	
+	menuBuilder.AddMenuEntry(MenuToolCommands::Get().MenuCommand3);
 }
 
 void MenuTool::MenuCommand1()
@@ -133,7 +110,7 @@ FReply MenuTool::AddTag()
 		const FScopedTransaction Transaction(FText::FromString("Add Tag"));
 		for (FSelectionIterator It(GEditor->GetSelectedActorIterator()); It; ++It)
 		{
-			AActor* Actor = static_cast<AActor*>(*It);
+			AActor *Actor = static_cast<AActor *>(*It);
 			if (!Actor->Tags.Contains(TagToAdd))
 			{
 				Actor->Modify();
@@ -150,10 +127,10 @@ FText MenuTool::GetTagToAddText() const
 	return FText::FromName(TagToAdd);
 }
 
-void MenuTool::OnTagToAddTextCommited(const FText& InText, ETextCommit::Type CommitInfo)
+void MenuTool::OnTagToAddTextCommited(const FText &InText, ETextCommit::Type CommitInfo)
 {
 	FString str = InText.ToString();
-	TagToAdd = FName(*str.Trim());
+	TagToAdd = FName(*str.TrimStart());
 }
 
 #undef LOCTEXT_NAMESPACE

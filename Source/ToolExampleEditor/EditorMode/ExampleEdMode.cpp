@@ -1,20 +1,18 @@
+#include "ExampleEdMode.h"
 #include "ToolExampleEditor/ToolExampleEditor.h"
-#include "Editor/UnrealEd/Public/Toolkits/ToolkitManager.h"
+#include "Toolkits/ToolkitManager.h"
 #include "ScopedTransaction.h"
 #include "ExampleEdModeToolkit.h"
-#include "ExampleEdMode.h"
-#include "EditorMode/ExampleTargetPoint.h"
+#include "ToolExample/EditorMode/ExampleTargetPoint.h"
 
 class ExampleEditorCommands : public TCommands<ExampleEditorCommands>
 {
 public:
-	ExampleEditorCommands() : TCommands <ExampleEditorCommands>
-		(
-			"ExampleEditor",	// Context name for fast lookup
-			FText::FromString(TEXT("Example Editor")),	// context name for displaying
-			NAME_None,	// Parent
-			FEditorStyle::GetStyleSetName()
-			)
+	ExampleEditorCommands() : TCommands<ExampleEditorCommands>(
+								  "ExampleEditor",							 // Context name for fast lookup
+								  FText::FromString(TEXT("Example Editor")), // context name for displaying
+								  NAME_None,								 // Parent
+								  FAppStyle::GetAppStyleSetName())
 	{
 	}
 
@@ -46,7 +44,7 @@ FExampleEdMode::~FExampleEdMode()
 
 void FExampleEdMode::MapCommands()
 {
-	const auto& Commands = ExampleEditorCommands::Get();
+	const auto &Commands = ExampleEditorCommands::Get();
 
 	ExampleEdModeActions->MapAction(
 		Commands.DeletePoint,
@@ -57,7 +55,7 @@ void FExampleEdMode::MapCommands()
 void FExampleEdMode::Enter()
 {
 	FEdMode::Enter();
-	
+
 	if (!Toolkit.IsValid())
 	{
 		Toolkit = MakeShareable(new FExampleEdModeToolkit);
@@ -75,26 +73,26 @@ void FExampleEdMode::Exit()
 {
 	FToolkitManager::Get().CloseToolkit(Toolkit.ToSharedRef());
 	Toolkit.Reset();
-	
+
 	FEdMode::Exit();
 }
 
-void FExampleEdMode::Render(const FSceneView* View, FViewport* Viewport, FPrimitiveDrawInterface* PDI)
+void FExampleEdMode::Render(const FSceneView *View, FViewport *Viewport, FPrimitiveDrawInterface *PDI)
 {
 	const FColor normalColor(200, 200, 200);
 	const FColor selectedColor(255, 128, 0);
 
-	UWorld* World = GetWorld();
+	UWorld *World = GetWorld();
 	for (TActorIterator<AExampleTargetPoint> It(World); It; ++It)
 	{
-		AExampleTargetPoint* actor = (*It);
+		AExampleTargetPoint *actor = (*It);
 		if (actor)
 		{
 			FVector actorLoc = actor->GetActorLocation();
 			for (int i = 0; i < actor->Points.Num(); ++i)
 			{
 				bool bSelected = (actor == currentSelectedTarget && i == currentSelectedIndex);
-				const FColor& color = bSelected ? selectedColor : normalColor;
+				const FColor &color = bSelected ? selectedColor : normalColor;
 				// set hit proxy and draw
 				PDI->SetHitProxy(new HExamplePointProxy(actor, i));
 				PDI->DrawPoint(actor->Points[i], color, 15.f, SDPG_Foreground);
@@ -107,7 +105,7 @@ void FExampleEdMode::Render(const FSceneView* View, FViewport* Viewport, FPrimit
 	FEdMode::Render(View, Viewport, PDI);
 }
 
-bool FExampleEdMode::HandleClick(FEditorViewportClient* InViewportClient, HHitProxy *HitProxy, const FViewportClick &Click)
+bool FExampleEdMode::HandleClick(FEditorViewportClient *InViewportClient, HHitProxy *HitProxy, const FViewportClick &Click)
 {
 	bool isHandled = false;
 
@@ -116,8 +114,8 @@ bool FExampleEdMode::HandleClick(FEditorViewportClient* InViewportClient, HHitPr
 		if (HitProxy->IsA(HExamplePointProxy::StaticGetType()))
 		{
 			isHandled = true;
-			HExamplePointProxy* examplePointProxy = (HExamplePointProxy*)HitProxy;
-			AExampleTargetPoint* actor = Cast<AExampleTargetPoint>(examplePointProxy->RefObject);
+			HExamplePointProxy *examplePointProxy = (HExamplePointProxy *)HitProxy;
+			AExampleTargetPoint *actor = Cast<AExampleTargetPoint>(examplePointProxy->RefObject);
 			int32 index = examplePointProxy->Index;
 			if (actor && index >= 0 && index < actor->Points.Num())
 			{
@@ -143,13 +141,13 @@ bool FExampleEdMode::HandleClick(FEditorViewportClient* InViewportClient, HHitPr
 	return isHandled;
 }
 
-bool FExampleEdMode::InputDelta(FEditorViewportClient* InViewportClient, FViewport* InViewport, FVector& InDrag, FRotator& InRot, FVector& InScale)
+bool FExampleEdMode::InputDelta(FEditorViewportClient *InViewportClient, FViewport *InViewport, FVector &InDrag, FRotator &InRot, FVector &InScale)
 {
 	if (InViewportClient->GetCurrentWidgetAxis() == EAxisList::None)
 	{
 		return false;
 	}
-	
+
 	if (HasValidSelection())
 	{
 		if (!InDrag.IsZero())
@@ -163,7 +161,7 @@ bool FExampleEdMode::InputDelta(FEditorViewportClient* InViewportClient, FViewpo
 	return false;
 }
 
-bool FExampleEdMode::InputKey(FEditorViewportClient* ViewportClient, FViewport* Viewport, FKey Key, EInputEvent Event)
+bool FExampleEdMode::InputKey(FEditorViewportClient *ViewportClient, FViewport *Viewport, FKey Key, EInputEvent Event)
 {
 	bool isHandled = false;
 
@@ -175,7 +173,7 @@ bool FExampleEdMode::InputKey(FEditorViewportClient* ViewportClient, FViewport* 
 	return isHandled;
 }
 
-TSharedPtr<SWidget> FExampleEdMode::GenerateContextMenu(FEditorViewportClient* InViewportClient) const
+TSharedPtr<SWidget> FExampleEdMode::GenerateContextMenu(FEditorViewportClient *InViewportClient) const
 {
 	FMenuBuilder MenuBuilder(true, NULL);
 
@@ -186,8 +184,8 @@ TSharedPtr<SWidget> FExampleEdMode::GenerateContextMenu(FEditorViewportClient* I
 		// add label for point index
 		TSharedRef<SWidget> LabelWidget =
 			SNew(STextBlock)
-			.Text(FText::FromString(FString::FromInt(currentSelectedIndex)))
-			.ColorAndOpacity(FLinearColor::Green);
+				.Text(FText::FromString(FString::FromInt(currentSelectedIndex)))
+				.ColorAndOpacity(FLinearColor::Green);
 		MenuBuilder.AddWidget(LabelWidget, FText::FromString(TEXT("Point Index: ")));
 		MenuBuilder.AddMenuSeparator();
 		// add delete point entry
@@ -224,9 +222,9 @@ FVector FExampleEdMode::GetWidgetLocation() const
 	return FEdMode::GetWidgetLocation();
 }
 
-AExampleTargetPoint* GetSelectedTargetPointActor()
+AExampleTargetPoint *GetSelectedTargetPointActor()
 {
-	TArray<UObject*> selectedObjects;
+	TArray<UObject *> selectedObjects;
 	GEditor->GetSelectedActors()->GetSelectedObjects(selectedObjects);
 	if (selectedObjects.Num() == 1)
 	{
@@ -237,13 +235,13 @@ AExampleTargetPoint* GetSelectedTargetPointActor()
 
 void FExampleEdMode::AddPoint()
 {
-	AExampleTargetPoint* actor = GetSelectedTargetPointActor();
+	AExampleTargetPoint *actor = GetSelectedTargetPointActor();
 	if (actor)
 	{
 		const FScopedTransaction Transaction(FText::FromString("Add Point"));
 
 		// add new point, slightly in front of camera
-		FEditorViewportClient* client = (FEditorViewportClient*)GEditor->GetActiveViewport()->GetClient();
+		FEditorViewportClient *client = (FEditorViewportClient *)GEditor->GetActiveViewport()->GetClient();
 		FVector newPoint = client->GetViewLocation() + client->GetViewRotation().Vector() * 50.f;
 		actor->Modify();
 		actor->Points.Add(newPoint);
@@ -280,7 +278,7 @@ bool FExampleEdMode::HasValidSelection() const
 	return currentSelectedTarget.IsValid() && currentSelectedIndex >= 0 && currentSelectedIndex < currentSelectedTarget->Points.Num();
 }
 
-void FExampleEdMode::SelectPoint(AExampleTargetPoint* actor, int32 index)
+void FExampleEdMode::SelectPoint(AExampleTargetPoint *actor, int32 index)
 {
 	currentSelectedTarget = actor;
 	currentSelectedIndex = index;

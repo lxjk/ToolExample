@@ -2,8 +2,8 @@
 
 #include "ToolExampleEditor/ToolExampleEditor.h"
 #include "ToolExampleEditor/IExampleModuleInterface.h"
-#include "TabManager.h"
-#include "SDockTab.h"
+#include "Framework/Docking/TabManager.h"
+#include "Widgets/Docking/SDockTab.h"
 
 class FExampleTabToolBase : public IExampleModuleListenerInterface, public TSharedFromThis< FExampleTabToolBase >
 {
@@ -33,7 +33,8 @@ public:
 	{
 		FGlobalTabmanager::Get()->PopulateTabSpawnerMenu(menuBuilder, TabName);
 	};
-
+	
+	virtual ~FExampleTabToolBase() { };  // this gets rid of a virtual destructor warning, but I'm no sure this is the correct way to handle it - you can also use a pragma to supress the warning
 protected:
 	FName TabName;
 	FText TabDisplayName;

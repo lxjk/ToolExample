@@ -1,0 +1,15 @@
+.ignore
+ToolExample.sln
+ToolExample.code-workspace
+.vs/
+.vscode/
+.idea/
+Binaries/
+Intermediate/
+Saved/
+.idea/
+
+Config/DefaultEditorUserSettings.ini
+.vsconfig
+Config/DefaultInput.ini
+.obsidian/
